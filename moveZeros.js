@@ -1,18 +1,16 @@
 function moveZeros(nums) {
-    let zeroCounter = 0;
-    let res = [];
+    let index = 0;
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] != 0) {
-            res.push(nums[i]);
-        } else {
-            zeroCounter++;
+            nums[index] = nums[i];
+            index++;
         }
     }
-    while (zeroCounter > 0) {
-        res.push(0);
-        zeroCounter--;
+    while (index < nums.length) {
+        nums[index] = 0;
+        index++;
     }
-    return res;
+    return nums;
 }
 
 let nums = [0,1,0,3,12];
